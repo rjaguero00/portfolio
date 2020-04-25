@@ -1,3 +1,13 @@
+$(function () {
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 10) {
+            $('.navbar').addClass('active');
+        } else {
+            $('.navbar').removeClass('active');
+        }
+    });
+});
+
 $(window).on("load", function () {
 
     $(".loader .inner").fadeOut(750, function () {
@@ -24,7 +34,7 @@ $(document).ready(function () {
     });
 
     var typed = new Typed(".typed", {
-        strings: ["Front-End Developer.", "Web Design.", "Student."],
+        strings: ["Web Developer", "Accountant"],
         typeSpeed: 70,
         loop: true,
         startDelay: 1000,
@@ -114,21 +124,22 @@ $(document).ready(function () {
         $("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
     });
 
-    const nav = $("#navigation");
-    const navTop = nav.offset().top;
 
-    $(window).on("scroll", stickyNavigation);
+    // const nav = $("#navigation");
+    // const navTop = nav.offset().top;
 
-    function stickyNavigation() {
+    // $(window).on("scroll", stickyNavigation);
 
-        const body = $("body");
-        if ($(window).scrollTop() >= navTop) {
-            body.css("padding-top", nav.outerHeight() + "px");
-            body.addClass("fixedNav");
-        }
-        else {
-            body.css("padding-top", 0);
-            body.removeClass("fixedNav");
-        }
-    }
+    // function stickyNavigation() {
+
+    //     const body = $("body");
+    //     if ($(window).scrollTop() >= navTop) {
+    //         body.css("padding-top", nav.outerHeight() + "px");
+    //         body.addClass("fixedNav");
+    //     }
+    //     else {
+    //         body.css("padding-top", 0);
+    //         body.removeClass("fixedNav");
+    //     }
+    // }
 });
